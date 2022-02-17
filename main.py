@@ -42,7 +42,15 @@ def MergeFiles(file1, file2, newFile):
   f2Content = readfilewith(file2)
   newContent = f1Content+"\n"+f2Content
   createFileWith(newFile, newContent)
-  
+
+
+def replaceLine(file, line):
+  with open(file, 'r') as f:
+    content = f.readlines()
+  content[0] = line
+  print(content)
+  createFile(file, "".join(content)) 
+
 #create a file
 #createFile("sample.txt", "Apple\nBall")
 
@@ -63,3 +71,6 @@ def MergeFiles(file1, file2, newFile):
 
 #merge two files
 #MergeFiles(file1="new-products.csv", file2="sample.txt", newFile="mergedfile.txt")
+
+# replace a line from text and csv file
+#replaceLine(file="new-products.csv", line="ID,NAME,PRICE\n")
