@@ -36,6 +36,12 @@ def replaceAWord(dir, replace, sub):
       content = readfilewith(filepath)
       newContent = content.replace(replace, sub)
       createFileWith(filepath, newContent)
+
+def MergeFiles(file1, file2, newFile):
+  f1Content = readfilewith(file1)
+  f2Content = readfilewith(file2)
+  newContent = f1Content+"\n"+f2Content
+  createFileWith(newFile, newContent)
   
 #create a file
 #createFile("sample.txt", "Apple\nBall")
@@ -54,3 +60,6 @@ def replaceAWord(dir, replace, sub):
 
 #replaace a word in multiple files
 #replaceAWord("files/", "price", "Units")
+
+#merge two files
+#MergeFiles(file1="new-products.csv", file2="sample.txt", newFile="mergedfile.txt")
